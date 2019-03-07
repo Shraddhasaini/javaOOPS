@@ -18,7 +18,6 @@ public class WordHyp {
     }
 
     public static String hyphenateWord(String word) {
-        // Returns a the hyphenated word
         ArrayList<HashMap<Integer, Integer>> matches = getMatches(word);
         int[] final_vals = new int[word.length()];
 
@@ -47,14 +46,6 @@ public class WordHyp {
     }
 
     public static ArrayList<HashMap<Integer, Integer>> getMatches(String word) {
-        // Returns each digit location and their corresponding value in a Hashmap.
-        // Each Hashmap represents a different pattern that matched the word
-        //
-        // each matched_position hashmap is a hashmap containing all of the
-        // matched positions in the word and their corresponding digit value
-        //
-        // ex. {idx_in_word=value, idx_in_word=value], ...}
-        // ex. {0=5, 1=2, ...}
         ArrayList<HashMap<Integer, Integer>> all_matched_vals = new ArrayList<>();
 
         for (String p : patterns) {
