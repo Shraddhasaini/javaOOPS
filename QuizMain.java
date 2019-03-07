@@ -29,22 +29,23 @@ class Ans extends Ques{
 	return answer;
 }
 }
+
 public class QuizMain
 {
 	public static void main(String args[]){
 	Ans obj = new Ans();
-int n=3;	
+int n=3;
 while(n!=0)
 	{
 		obj.ques();
 	String answer=obj.answ();
 	if (answer=="Incorrect"){
 	System.out.println("Please retry again");
-	
-	} 
+
+	}
 	else
 	System.out.println("correct ans");
-n--;	
+n--;
 }
 }
 

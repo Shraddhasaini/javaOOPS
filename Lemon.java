@@ -3,9 +3,9 @@ class Tea{
    {
 	System.out.println("Class Tea");
    }
-   public void DrinkType()
+   public void type(int a)
    {
-	System.out.println("Drink Type: Tea");
+	System.out.println("the type of drink rates:" +a);
    }
 }
 class Green extends Tea{
@@ -13,9 +13,9 @@ class Green extends Tea{
    {
 	System.out.println("Class Green");
    }
-   public void type()
+   public void type(String s)
    {
-	System.out.println("type: Green");
+	System.out.println("type: " +s);
    }
    public void taste()
    {
@@ -33,10 +33,12 @@ public class Lemon extends Green{
 	System.out.println("citrus");
    }
    public static void main(String args[])
-   {
+   {	
 	 Lemon obj=new Lemon();
-	 obj.DrinkType();
-	 obj.type();
+	 obj.type(10);
+	 obj.type("Green");
 	 obj.taste();
+	Green obj2=new Green();
+	obj2.taste();
    }
 }
