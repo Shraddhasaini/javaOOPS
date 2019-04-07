@@ -5,9 +5,7 @@ import java.util.*;
 
 public class WordHyp {
     private static List<String> patterns = load("tex-hyphenation-patterns.txt");
-
-    public static List<String> load(String filename) {
-        // loads all of the lines of a file into a list
+	public static List<String> load(String filename) {
         try {
             patterns = Files.readAllLines(Paths.get(filename));
         }
@@ -59,8 +57,6 @@ public class WordHyp {
     }
 
     public static HashMap<Integer, Integer> getMatchValuesOf(String pattern, String word) {
-        // Gets the matched values of a single word
-        // see getMatches(...) for more info
         int matchLoc = getMatchLoc(word, pattern);
 
         if (matchLoc == -1)
