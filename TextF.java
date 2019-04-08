@@ -11,8 +11,8 @@ import java.util.*;
 
 public class TextF extends Frame implements ActionListener{
 	Frame f= new Frame("Word Prediction");
-	TextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8,tf9,tf10,tf11,tf12,tf13,tf14,tf15,tf16;
-	Button b,bh,bc;
+	TextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8,tf9,tf10,tf11,tf12,tf13,tf14,tf15,tf16,tf17,tf18,tf19,tf20,tf21;
+	Button b,bh,bc,br1,br2,br3,br4;
 	TextF(){
 	tf1 = new TextField("Enter the word by gliding your fingers");
 	 tf1.setBounds(50,50,300,20);
@@ -61,6 +61,21 @@ public class TextF extends Frame implements ActionListener{
 	tf16=new TextField();  
         tf16.setBounds(300,600,50,20); 
 	tf16.setEditable(false);
+	tf17=new TextField("Common replies:");  
+        tf17.setBounds(800,50,300,20); 
+	tf17.setEditable(false);
+	tf18=new TextField();  
+        tf18.setBounds(800,100,300,20); 
+	tf18.setEditable(false);
+	tf19=new TextField();  
+        tf19.setBounds(800,150,300,20); 
+	tf19.setEditable(false);
+	tf20=new TextField();  
+        tf20.setBounds(800,200,300,20); 
+	tf20.setEditable(false);
+	tf21=new TextField();  
+        tf21.setBounds(800,250,300,20); 
+	tf21.setEditable(false);
 	b = new Button("Predict");
 	b.setBounds(50,150,300,20);
 	b.addActionListener(this);
@@ -70,8 +85,21 @@ public class TextF extends Frame implements ActionListener{
 	bc = new Button("Count alphabets");
 	bc.setBounds(50,450,300,20);
 	bc.addActionListener(this);
+	br1 = new Button("1. Reply");
+	br1.setBounds(700,100,50,20);
+	br1.addActionListener(this);
+	br2 = new Button("2. Reply");
+	br2.setBounds(700,150,50,20);
+	br2.addActionListener(this);
+	br3 = new Button("3. Reply");
+	br3.setBounds(700,200,50,20);
+	br3.addActionListener(this);
+	br4 = new Button("4. Reply");
+	br4.setBounds(700,250,50,20);
+	br4.addActionListener(this);
 	f.add(tf1);f.add(tf2);f.add(tf3);f.add(tf4);f.add(tf5);f.add(tf6);f.add(tf7);f.add(tf8);f.add(tf9);f.add(tf10);f.add(b);f.add(bh);
-	f.add(tf11);f.add(tf12);f.add(tf13);f.add(tf14);f.add(tf15);f.add(tf16);f.add(bc);
+	f.add(tf11);f.add(tf12);f.add(tf13);f.add(tf14);f.add(tf15);f.add(tf16);f.add(tf17);f.add(tf18);f.add(tf19);f.add(tf20);f.add(tf21);
+	f.add(bc);f.add(br1);f.add(br2);f.add(br3);f.add(br4);
 	f.setSize(300,300);
 	f.setLayout(null);
 	f.setVisible(true);
@@ -163,6 +191,26 @@ public void actionPerformed(ActionEvent e){
 			tf14.setText(len04);
 			tf16.setText(len05);
 		}
+			if(e.getSource()==br1){
+				for (String str :words){
+				String str002 = Reply(s2);
+				tf18.setText(str002);
+				}}
+			if(e.getSource()==br2){
+				for (String stri :words){
+				String str003 = Reply(s3);
+				tf19.setText(str003);
+				}}
+			if(e.getSource()==br3){
+				for (String st :words){
+				String str004 = Reply(s4);
+				tf20.setText(str004);
+				}}
+			if(e.getSource()==br4){
+				for (String strin :words){
+				String str005 = Reply(s5);
+				tf21.setText(str005);
+				}}
 
 	}
 
@@ -310,7 +358,31 @@ public static ArrayList<String> getChoices(String firstLetter, String lastLetter
         return match_loc;
     }
 
+public String Reply(String abc){
+	String str001;
+	switch(abc){
+		case "hello": str001 = "Hi There";
+				break;
+		case "shraddha": str001=  "That's my name";
+				break;
+		case "university": str001 = "UPES";
+				break;
+		case "school": str001 = "IB school";
+				break;
+		case "thanks": str001= "Welcome";
+				break;
+		case "saksham": str001= "I LOVE YOU";
+				break;
+		case "ankit": str001= "Bhnji";
+				break;
+		case "dhruv": str001= "dhruv pagal h";
+				break;
+		default: str001= "Sorry IDK";
+			break;
 
+}
+return str001;
+}
 
 public static void main(String[] args){
 	new TextF();
