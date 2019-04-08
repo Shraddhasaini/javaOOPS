@@ -11,8 +11,8 @@ import java.util.*;
 
 public class TextF extends Frame implements ActionListener{
 	Frame f= new Frame("Word Prediction");
-	TextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8,tf9,tf10;
-	Button b,bh;
+	TextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8,tf9,tf10,tf11,tf12,tf13,tf14,tf15,tf16;
+	Button b,bh,bc;
 	TextF(){
 	tf1 = new TextField("Enter the word by gliding your fingers");
 	 tf1.setBounds(50,50,300,20);
@@ -43,13 +43,35 @@ public class TextF extends Frame implements ActionListener{
 	tf10=new TextField();  
         tf10.setBounds(200,400,100,20); 
 	tf10.setEditable(false);
+	tf11=new TextField();  
+        tf11.setBounds(50,500,100,20); 
+	tf11.setEditable(false);
+	tf12=new TextField();  
+        tf12.setBounds(200,500,100,20); 
+	tf12.setEditable(false);
+	tf13=new TextField();  
+        tf13.setBounds(50,550,100,20); 
+	tf13.setEditable(false);
+	tf14=new TextField();  
+        tf14.setBounds(200,550,100,20); 
+	tf14.setEditable(false);
+	tf15=new TextField("The length of String you entered is: ");  
+        tf15.setBounds(50,600,200,20); 
+	tf15.setEditable(false);
+	tf16=new TextField();  
+        tf16.setBounds(300,600,50,20); 
+	tf16.setEditable(false);
 	b = new Button("Predict");
 	b.setBounds(50,150,300,20);
 	b.addActionListener(this);
 	bh = new Button("Hyphenate");
 	bh.setBounds(50,300,300,20);
 	bh.addActionListener(this);
+	bc = new Button("Count alphabets");
+	bc.setBounds(50,450,300,20);
+	bc.addActionListener(this);
 	f.add(tf1);f.add(tf2);f.add(tf3);f.add(tf4);f.add(tf5);f.add(tf6);f.add(tf7);f.add(tf8);f.add(tf9);f.add(tf10);f.add(b);f.add(bh);
+	f.add(tf11);f.add(tf12);f.add(tf13);f.add(tf14);f.add(tf15);f.add(tf16);f.add(bc);
 	f.setSize(300,300);
 	f.setLayout(null);
 	f.setVisible(true);
@@ -124,6 +146,24 @@ public void actionPerformed(ActionEvent e){
 			tf10.setText(word04);
 		}
 		}
+			int len1 = s2.length();
+			String len01 = String.valueOf(len1);
+			int len2 = s3.length();
+			String len02 = String.valueOf(len2);
+			int len3 = s4.length();
+			String len03 = String.valueOf(len3);
+			int len4 = s5.length();
+			String len04 = String.valueOf(len4);
+			int len5 = s1.length();
+			String len05 = String.valueOf(len5);
+		if(e.getSource()==bc){
+			tf11.setText(len01);
+			tf12.setText(len02);
+			tf13.setText(len03);
+			tf14.setText(len04);
+			tf16.setText(len05);
+		}
+
 	}
 
 public static ArrayList<String> findWords(String input) {
