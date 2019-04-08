@@ -141,7 +141,5 @@ public static ArrayList<String> getChoices(String firstLetter, String lastLetter
 
 public static void main(String[] args){
 	new Text();
-	
 }
-
 }
