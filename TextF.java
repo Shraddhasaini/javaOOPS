@@ -11,8 +11,8 @@ import java.util.*;
 
 public class TextF extends Frame implements ActionListener{
 	Frame f= new Frame("Word Prediction");
-	TextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8,tf9,tf10,tf11,tf12,tf13,tf14,tf15,tf16,tf17,tf18,tf19,tf20,tf21;
-	Button b,bh,bc,br1,br2,br3,br4;
+	TextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8,tf9,tf10,tf11,tf12,tf13,tf14,tf15,tf16,tf17,tf18,tf19,tf20,tf21,tf22,tf23,tf24,tf25,tf26,tf27,tf28,tf29,tf30,tf31,tf32,tf33;
+	Button b,bh,bc,br1,br2,br3,br4,bv,bco;
 	TextF(){
 	tf1 = new TextField("Enter the word by gliding your fingers");
 	 tf1.setBounds(50,50,300,20);
@@ -76,6 +76,42 @@ public class TextF extends Frame implements ActionListener{
 	tf21=new TextField();  
         tf21.setBounds(500,250,300,20); 
 	tf21.setEditable(false);
+	tf22=new TextField("Vowels in main String: ");  
+        tf22.setBounds(400,350,200,20); 
+	tf22.setEditable(false);
+	tf23=new TextField();  
+        tf23.setBounds(600,350,50,20); 
+	tf23.setEditable(false);
+	tf24=new TextField();  
+        tf24.setBounds(400,400,100,20); 
+	tf24.setEditable(false);
+	tf25=new TextField();  
+        tf25.setBounds(550,400,100,20); 
+	tf25.setEditable(false);
+	tf26=new TextField();  
+        tf26.setBounds(400,450,100,20); 
+	tf26.setEditable(false);
+	tf27=new TextField();  
+        tf27.setBounds(550,450,100,20); 
+	tf27.setEditable(false);
+	tf28=new TextField("Consonants in main String: ");  
+        tf28.setBounds(400,550,200,20); 
+	tf28.setEditable(false);
+	tf29=new TextField();  
+        tf29.setBounds(600,550,50,20); 
+	tf29.setEditable(false);
+	tf30=new TextField();  
+        tf30.setBounds(400,600,100,20); 
+	tf30.setEditable(false);
+	tf31=new TextField();  
+        tf31.setBounds(550,600,100,20); 
+	tf31.setEditable(false);
+	tf32=new TextField();  
+        tf32.setBounds(400,650,100,20); 
+	tf32.setEditable(false);
+	tf33=new TextField();  
+        tf33.setBounds(550,650,100,20); 
+	tf33.setEditable(false);
 	b = new Button("Predict");
 	b.setBounds(50,150,300,20);
 	b.addActionListener(this);
@@ -97,10 +133,17 @@ public class TextF extends Frame implements ActionListener{
 	br4 = new Button("4. Reply");
 	br4.setBounds(400,250,50,20);
 	br4.addActionListener(this);
+	bv = new Button("Count Vowels");
+	bv.setBounds(400,300,300,20);
+	bv.addActionListener(this);
+	bco = new Button("Count Consonants");
+	bco.setBounds(400,500,300,20);
+	bco.addActionListener(this);
 	f.add(tf1);f.add(tf2);f.add(tf3);f.add(tf4);f.add(tf5);f.add(tf6);f.add(tf7);f.add(tf8);f.add(tf9);f.add(tf10);f.add(b);f.add(bh);
 	f.add(tf11);f.add(tf12);f.add(tf13);f.add(tf14);f.add(tf15);f.add(tf16);f.add(tf17);f.add(tf18);f.add(tf19);f.add(tf20);f.add(tf21);
-	f.add(bc);f.add(br1);f.add(br2);f.add(br3);f.add(br4);
-	f.setSize(300,300);
+	f.add(bc);f.add(br1);f.add(br2);f.add(br3);f.add(br4);f.add(bv);f.add(tf22);f.add(tf23);f.add(tf24);f.add(tf25);f.add(tf26);f.add(tf27);f.add(bco);
+	f.add(tf28);f.add(tf29);f.add(tf30);f.add(tf31);f.add(tf32);f.add(tf33);
+	f.setSize(850,700);
 	f.setLayout(null);
 	f.setVisible(true);
  }
@@ -211,7 +254,53 @@ public void actionPerformed(ActionEvent e){
 				String str005 = Reply(s5);
 				tf21.setText(str005);
 				}}
-
+			if(e.getSource()==bv){
+				String vow05 = Vowels(s1);
+				tf23.setText(vow05);
+			for (String deefi : words){
+				String vow01 = Vowels(s2);
+				tf24.setText(vow01);
+				String vow02 = Vowels(s3);
+				tf25.setText(vow02);
+				String vow03 = Vowels(s4);
+				tf26.setText(vow03);
+				String vow04 = Vowels(s5);
+				tf27.setText(vow04);
+			}	
+		}if(e.getSource()==bco){
+			String s11=tf11.getText();
+			String s12=tf12.getText();
+			String s13=tf13.getText();
+			String s14=tf14.getText();
+			String s16=tf16.getText();
+			String s23=tf23.getText();
+			String s24=tf24.getText();
+			String s25=tf25.getText();
+			String s26=tf26.getText();
+			String s27=tf27.getText();
+			int a11=Integer.parseInt(s11); 
+			int a12=Integer.parseInt(s12); 
+			int a13=Integer.parseInt(s13); 
+			int a14=Integer.parseInt(s14); 
+			int a16=Integer.parseInt(s16); 
+			int a23=Integer.parseInt(s23); 
+			int a24=Integer.parseInt(s24); 
+			int a25=Integer.parseInt(s25); 
+			int a26=Integer.parseInt(s26); 
+			int a27=Integer.parseInt(s27); 
+			int c29,c30,c31,c32,c33;
+				c29 = a16 - a23;
+				c30 = a11 - a24;
+				c31 = a12 - a25;
+				c32 = a13 - a26;
+				c33 = a14 - a27;
+				String result29=String.valueOf(c29);
+				String result30=String.valueOf(c30);
+				String result31=String.valueOf(c31);
+				String result32=String.valueOf(c32);
+				String result33=String.valueOf(c33);
+				  tf29.setText(result29);    tf30.setText(result30);    tf31.setText(result31);    tf32.setText(result32);    tf33.setText(result33);  
+			}
 	}
 
 public static ArrayList<String> findWords(String input) {
@@ -377,12 +466,29 @@ public String Reply(String abc){
 				break;
 		case "dhruv": str001= "dhruv pagal h";
 				break;
+		case "unify": str001 = "make or become united, uniform, or whole.";
+				break;
+		case "unity": str001 = "the state of being united or joined as a whole.";
+				break;
+		case "unsay": str001 = "withdraw or retract (a statement).";
+				break;
 		default: str001= "Sorry IDK";
 			break;
 
 }
 return str001;
 }
+
+public String Vowels(String def){
+	int vow= 0;
+	for(int i = 0;i < def.length(); ++i){
+	char ch = def.charAt(i);
+	if(ch == 'a'|| ch =='e'|| ch == 'i' || ch == 'o' || ch == 'u'){++vow;}
+}
+String vowel = String.valueOf(vow);
+return vowel;
+}
+
 
 public static void main(String[] args){
 	new TextF();
