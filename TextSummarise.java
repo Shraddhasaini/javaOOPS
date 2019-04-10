@@ -24,7 +24,6 @@ import java.util.*;
             s=s.replaceAll("\\s+","");
         }
          arr = lines.toArray(new String[0]);
-
     }
     public static String toString(String file) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(file));
@@ -94,10 +93,6 @@ import java.util.*;
 
         return result;
     }
-
-
-
-
     public static void main(String arg[]) throws IOException {
         String txt = toString("out/production/DailyProgrammer/text.txt");
         String[] temp = txt.split("\\s+");
@@ -115,7 +110,7 @@ import java.util.*;
             temp[i] = temp[i].replaceAll("\\.", "");
             text.add(temp[i]);
         }
-
+//DOWNLOAD!
         //System.out.print(Arrays.toString(temp));
         String str = toString("out/production/DailyProgrammer/stopword.txt");
         String[] stopword = str.split("\\s+");
