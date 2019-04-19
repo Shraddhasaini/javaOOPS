@@ -1,6 +1,6 @@
 import java.util.*;
-    import java.io.*;
-    import java.text.*;
+import java.io.*;
+import java.text.*;
     public class TextSummarise {
     static List<String> lines = new ArrayList<String>();
     static String[] arr;
