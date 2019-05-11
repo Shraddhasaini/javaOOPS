@@ -54,11 +54,11 @@ import java.text.*;
 
 
     public static void countOccurrences(ArrayList<String> asList){
-        //List asList = Arrays.asList(text);
+        List asList = Arrays.asList(text);
         Set<String> mySet = new HashSet<String>(asList);
         for(String s: mySet){
 
-            //System.out.println(s + " " +Collections.frequency(asList,s));
+            System.out.println(s + " " +Collections.frequency(asList,s));
             hash.put(s,Collections.frequency(asList,s));
 
         }
@@ -94,7 +94,7 @@ import java.text.*;
         return result;
     }
     public static void main(String arg[]) throws IOException {
-        String txt = toString("out/production/DailyProgrammer/text.txt");
+        String txt = toString("StarTrek.txt");
         String[] temp = txt.split("\\s+");
         BreakIterator iterator = BreakIterator.getSentenceInstance(Locale.ENGLISH);
         iterator.setText(txt);
@@ -110,9 +110,9 @@ import java.text.*;
             temp[i] = temp[i].replaceAll("\\.", "");
             text.add(temp[i]);
         }
-//DOWNLOAD!
-        //System.out.print(Arrays.toString(temp));
-        String str = toString("out/production/DailyProgrammer/stopword.txt");
+
+        System.out.print(Arrays.toString(temp));
+        String str = toString("stop.txt");
         String[] stopword = str.split("\\s+");
         for (int i = 0; i < text.size(); i++) {
             for (int j = 0; j < stopword.length; j++) {
@@ -121,7 +121,7 @@ import java.text.*;
                 }
             }
 
-            //System.out.println(text.get(i));
+            System.out.println(text.get(i));
         }
         int count = 0;
 
@@ -152,10 +152,10 @@ import java.text.*;
         summarise[1]=(String) mapSentence.keySet().toArray()[mapSentence.size()-2];
         summarise[2]=(String) mapSentence.keySet().toArray()[mapSentence.size()-3];
         summarise[3]=(String) mapSentence.keySet().toArray()[mapSentence.size()-4];
-        //System.out.print(Arrays.toString(bestSentence));
-       // bestScore[0]=map.values().toArray([map.size()-1]);
-        //System.out.println(bestScore[0]+"\n"+bestScore[1]+"\n"+bestScore[2]+"\n"+bestScore[3]);
-        //printMap(mapSentence);
+        System.out.print(Arrays.toString(bestSentence));
+        bestScore[0]=map.values().toArray([map.size()-1]);
+        System.out.println(bestScore[0]+"\n"+bestScore[1]+"\n"+bestScore[2]+"\n"+bestScore[3]);
+        printMap(mapSentence);
         for (int i=0;i<summarise.length;i++){
             System.out.println(summarise[i]);
         }

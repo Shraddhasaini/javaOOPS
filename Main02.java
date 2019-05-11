@@ -24,5 +24,4 @@ obj1.method2();
 Child obj2 = new Child();
 obj2.method2();
 }
-
 }

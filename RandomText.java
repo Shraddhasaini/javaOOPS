@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import javafx.util.Pair;
+import java.util.Scanner;
 
 public class RandomText {
 
@@ -14,32 +15,35 @@ public class RandomText {
         data = new HashMap<>();
     }
 
-    public void readFile(String fname) {
+    public  void readFile(String fname) {
+try{
             String prefix1 = "I";
             String prefix2 = "am";
-            while (true) {
+	Scanner keyboard = new Scanner("StarTrek.txt");
+	while (true) {
                 Pair<String,String> pair = new Pair(prefix1, prefix2);
                 if (!data.containsKey(pair)) {
                     data.put(pair, new HashMap<>());
-                }
+               }
                 Map<String,Integer> map = data.get(pair);
-                String suffix = scanner.next();
+
+                String suffix = keyboard.next();
                 map.put(suffix, map.containsKey(suffix) ? map.get(suffix) + 1 : 1);
-                prefix1 = prefix2;
-                prefix2 = suffix;
-            }
-            Pair<String,String> pair = new Pair(prefix1, prefix2);
-            if (!data.containsKey(pair)) {
-                data.put(pair, new HashMap<>());
-            }
-            Map<String,Integer> map = data.get(pair);
+              //  prefix1 = prefix2;
+              //  prefix2 = suffix;
+           //Pair<String,String> pair = new Pair(prefix1, prefix2);
+          //  if (!data.containsKey(pair)) {
+            //  data.put(pair, new HashMap<>());
+        //   }
+        //  Map<String,Integer> map = data.get(pair);
             map.put("", 1);
-            scanner.close();
-        } catch (FileNotFoundException e) {
+        //  keyboard.close();
+}
+} catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     public String generate() {
         return generate(0);
     }
