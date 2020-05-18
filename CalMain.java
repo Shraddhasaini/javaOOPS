@@ -3,6 +3,9 @@ class Add{
 	public void sum(int a, int b){
 	 c = a+b;
 	System.out.println("sum of a and b is "+c);	
+
+
+
  }
 }
 class Mul extends Add{
